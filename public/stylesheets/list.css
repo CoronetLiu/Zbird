@@ -1,0 +1,31 @@
+/*
+* @Author: CL
+* @Date:   2017-10-17 17:59:03
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-17 17:59:30
+*/
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,li,ol{
+    list-style:none;
+}
+html,body{
+    background:#ccc !important;
+}
+#header{
+    padding:20px 0;
+    background: #ccc;
+}
+.logo{
+    float:left;
+    font-size: 16px !important;
+}
+.lr,.islogin{
+    float:right;
+}
+.lr a,.islogin a{
+    margin-left:20px;
+}

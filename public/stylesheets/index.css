@@ -1,0 +1,78 @@
+/*
+* @Author: CL
+* @Date:   2017-10-11 20:11:46
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-17 15:02:35
+*/
+*{
+    margin:0;
+    padding:0;
+}
+ul,li,ol{
+    list-style:none;
+}
+html,body{
+    background:#ccc !important;
+}
+#header{
+    padding:20px 0;
+    background: #ccc;
+}
+.logo{
+    float:left;
+    font-size: 16px !important;
+}
+.lr,.islogin{
+    float:right;
+}
+.lr a,.islogin a{
+    margin-left:20px;
+}
+
+#banner{
+    position:relative;
+}
+#pic{
+    height:400px;
+    width:100%;
+    position:relative;
+}
+#pic li{
+    height:100%;
+    width:100%;
+    position:absolute;
+    left:0;
+    top:0;
+    opacity:0;
+    z-index:0;
+    transition: all .5s;
+}
+#pic li img{
+    width:100%;
+    height:100%;
+}
+#pic li:nth-child(1){
+    opacity:1;
+    z-index:1;
+}
+#banner>button{
+    position:absolute;
+    z-index:5;
+    width:30px;
+    height:60px;
+    text-align:center;
+    line-height:60px;
+    color:#fff;
+    background-color:rgba(255,255,255,0.5);
+    border:none;
+    outline:none;
+    display:none;
+}
+#prev{
+    left:0px;
+    top:170px;
+}
+#next{
+    right:0px;
+    top:170px;
+}

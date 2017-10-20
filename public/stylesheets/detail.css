@@ -1,0 +1,46 @@
+/*
+* @Author: CL
+* @Date:   2017-10-18 17:16:27
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-18 19:25:59
+*/
+
+*{
+    margin:0;
+    padding:0;
+}
+ul,li,ol{
+    list-style:none;
+}
+html,body{
+    background:#ccc !important;
+}
+#header{
+    padding:20px 0;
+    background: #ccc;
+}
+.logo{
+    float:left;
+    font-size: 16px !important;
+}
+.lr,.islogin{
+    float:right;
+}
+.lr a,.islogin a{
+    margin-left:20px;
+}
+
+
+.info-box h4{
+    padding:10px 0;
+}
+.info-box .goodprice{
+    font-size:25px;
+    padding:20px 0;
+}
+.info-box .form-group{
+    padding:20px 0;
+}
+.info-box .buy-btn{
+    margin-left:30px;
+}

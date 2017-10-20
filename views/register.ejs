@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>注册</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/register.css">
+</head>
+<body>
+<div class="container text-center">
+    <form action="" id="register-form">
+        <label>用户名：<input type="text" name="" value="" class="username"></label>
+        <label>密码：<input type="password" name="" value="" class="password"></label>
+        <label>昵称：<input type="text" name="" value="" class="nickname"></label>
+        <br/>
+        <label><input class="btn btn-primary" type="submit" name="" value="提交"></label>
+        <label><input class="btn btn-warning" type="reset" name="" value="重置"></label>
+        <label><a class="btn btn-warning" href="/users/login">登录</a>
+        <label><a class="btn btn-info" href="/">返回首页</a>
+    </form>
+</div>
+
+</body>
+<script type="text/javascript">
+     $("#register-form").submit(function(e){
+        if(e.preventDefault){
+            e.preventDefault();
+        }else{
+            e.returnValue = false;
+        }
+        register();
+     })
+
+     function register(){
+        $.ajax({
+            url:"/users/registerinfo",
+            data:{
+                username:$(".username").val(),
+                password:$(".password").val(),
+                nickname:$(".nickname").val()
+            },
+            type:"POST"
+        }).then(function(res){
+            // console.log("res=" + res);
+            switch(res){
+                case "2":alert("用户名不能为空！");break;
+                case "1":alert("该用户已存在！");break;
+                case "0":
+                    alert("注册成功！");
+                    window.location.href = "/users/login";
+                    break;
+            }
+        },function(){
+            alert("服务器故障！");
+        })
+     }
+</script>
+</html>

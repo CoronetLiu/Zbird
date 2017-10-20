@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>主页</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="/javascripts/index.js"></script>
+    <script src="/javascripts/islogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/index.css">
+    <link href="/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+
+    <%- include("./header.ejs") %>
+
+    <div id="banner">
+        <ul id="pic">
+            <% banners.forEach(function(imgs,i){ %>
+                <li>
+                    <a href="">
+                        <img src="<%= imgs.img %>" title="<%= imgs.title %>"/>
+                    </a>
+                </li>
+            <% }) %>
+        </ul>
+        <button id="prev"> < </button>
+        <button id="next"> > </button>
+    </div><!-- /banner -->
+
+    <div class="goods">
+    <p class="text-right"><a class="btn btn-info" href="/list">查看更多</a></p>
+        <div class="goods-row">
+            <% goods.forEach(function(goods,i){ %>
+                <div class="col-xs-12 col-md-6 col-lg-3">
+                    <div class="thumbnail">
+                        <a href="/detail?goodid=<%= goods.goodid %>"><img class="good-img" title="<%= goods.description %>" src="<%= goods.goodimg %>" alt="<%= goods.goodname %>"></a>
+                        <div class="caption">
+                            <h3><%= goods.goodname %></h3>
+                            <p><%= goods.description %></p>
+                            <p class="clearfix">
+                                <button class="btn btn-danger pull-left" role="button">￥：<%= goods.goodprice %></button>
+                                <button data-id="<%= goods.goodid %>" class="btn btn-primary pull-right buy-btn" role="button">加入购物车</button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+
+
+
+</div><!-- container -->
+
+
+
+</body>
+</html>

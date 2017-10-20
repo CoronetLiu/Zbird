@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>商品详情</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="/javascripts/detail.js"></script>
+    <script src="/javascripts/islogin.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/detail.css">
+    <link href="/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+    <%- include("./header.ejs") %>
+    <p class="text-right">
+        <a href="/list" class="btn btn-info">商品列表</a>
+        <a href="/" class="btn btn-info">返回首页</a>
+    </p>
+    <div class="goods-row">
+        <img class="col-xs-12 col-sm-4" title="<%= goods.description %>" src="<%= goods.goodimg %>" alt="">
+        <div class="info-box col-xs-12 col-sm-6">
+            <div>
+                <h2><%= goods.goodname %></h2>
+                <h4><%= goods.description %></h4>
+                <p>价格：<span class="text-danger goodprice">￥<%= goods.goodprice %></span></p>
+            </div>
+
+            <p class="form-group">
+                数量：
+                <button class="btn btn-primary red-num">-</button>
+                <input id="num-inp" class="btn" type="text" style="width:80px;" value="1">
+                <button class="btn btn-primary add-num">+</button>
+                <button data-id="<%= goods.goodid %>" class="btn btn-danger buy-btn">加入购物车</button>
+            </p>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
